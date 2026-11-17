@@ -97,6 +97,7 @@ Use clean, 16x16 wireframe or solid geometric SVGs:
 
 7. **Drawer & Sideview Viewer Coordination**:
    - When a navigation drawer is active, any secondary preview or file viewer must open instantaneously (zero transition lag) into a dedicated sideview panel occupying the remaining screen space next to the drawer, rather than rendering obscured beneath it or awkwardly centered. Closing the drawer dismisses the paired sideview.
+   - **Header Alignment**: Paired drawer and sideview headers must share the exact same height (`height: 48px; min-height: 48px; box-sizing: border-box;`) and padding (`0 16px`) to form a seamless horizontal top line with zero vertical staggering or height mismatch.
 
 
 ---

@@ -124,6 +124,7 @@ dashboard\
   - Dismissible via <kbd>Esc</kbd>, close button `[ESC / X]`, or clicking the background scrim.
 - **Sideview Document Viewer Mode**:
   - When opening a document while the burger menu drawer is active, the document modal reader instantly pops up into a **side view panel** occupying the remaining screen space to the right of the drawer (`left: 440px; right: 0; top: 0; bottom: 0;`).
+  - **Header Alignment & Height Consistency**: The navigation drawer header (`.drawer-header`) and document viewer header (`.modal-header`) share the exact same fixed height (`height: 48px; min-height: 48px; box-sizing: border-box;`), identical background (`#141414`), identical bottom border (`1px solid #333333`), and matching padding (`0 16px`), forming a unified continuous horizontal top bar across both panels.
   - Instant zero-transition display maintaining the drawer and folder tree in full view beside the document reader.
   - Closing the drawer or pressing <kbd>Esc</kbd> clears the side view and returns cleanly to the main dashboard.
 
