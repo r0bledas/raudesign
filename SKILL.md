@@ -31,10 +31,19 @@ This skill enforces strict compliance with the authoritative design specificatio
    - Zero external tracking, analytics, or network requests.
    - All styles, scripts, SVG assets, and resources must be fully embedded or served locally from the local filesystem.
 
-5. **Anti-Clutter Layout Hierarchy & Uniform Component Sizing**:
+5. **Calibrated Custom Scrollbars & Anti-Jitter**:
+   - Chrome default rounded/light scrollbars are strictly overridden with high-contrast monochrome styles:
+     - 8px thin scrollbars (`width: 8px; height: 8px`).
+     - Track: Pitch black (`#000000`).
+     - Thumb: Dark gray (`#2a2a2a`) with sharp `#555555` hover contrast.
+     - Firefox: `scrollbar-width: thin; scrollbar-color: #2a2a2a #000000`.
+   - Never allow dynamic layout collapse or scrollbar popping to introduce shaking or shifting during content reloads.
+
+6. **Anti-Clutter Layout Hierarchy & Uniform Component Sizing**:
    - No redundant top metric counters, decorative summary banners, or assumed status badges.
-   - Maximize information density above the fold with immediate search/filter capabilities.
+   - Maximize information density above the fold with immediate search/filter capabilities (clean placeholder: `Search...`).
    - Buttons must have fixed or minimum widths (`min-width: 78px; justify-content: center`) to prevent layout shifts.
+   - Card rows and button-like items carry clean static chevrons (`>`) without hover motion.
    - **Uniform Tag & Badge Sizing (The "Max-Width Alignment" Rule)**: When multiple tags or status badges appear within a list, group, or tree view (e.g. `[README]`, `[HOWTO]`, `[MANUAL]`, `[OPS]`), they must never have ragged, mismatched widths. All tags in that container must follow the same uniform width (matched to the widest tag item, e.g. `min-width: 62px` or `min-width: 58px`) with centered text alignment and `box-sizing: border-box`.
 
 ---

@@ -21,14 +21,15 @@ When invoked or applied, `/raudesign` enforces strict adherence to the visual an
 
 ### 2.1 Minimalist Header & Zero-Clutter Philosophy
 - **No Redundant Counter Cards / Stats Banners**: Top metric summary cards (e.g. "Universal Launchers", "Storytold Craft Apps", "GGUF AI Models", "ZIM Knowledge Repos") are completely omitted to prevent visual noise and keep cards immediately accessible above the fold.
-- **Clean Streamlined Header**: The header presents solely the system title and status indicator without redundant sub-banners ("100% AIR-GAPPED &bull; DYNAMIC DISCOVERY &bull; ZERO TELEMETRY"). The search filter input sits directly below the header.
+- **Clean Streamlined Header**: The header presents solely the system title and status indicator without redundant sub-banners ("100% AIR-GAPPED &bull; DYNAMIC DISCOVERY &bull; ZERO TELEMETRY").
+- **Streamlined Search Input**: The universal search bar uses the placeholder `Search...` (replacing long verbose labels like `FILTER APPLICATIONS, MODELS, OR SCRIPTS...`).
 
 ### 2.2 Card Anatomy & Geometry
 Each application, launcher, model, knowledge archive, manual, map, image, and docset is represented as an interactive card adhering to strict coordinate rules:
 
-1. **Static Right-Center Chevron (`>`)**:
-   - **Position**: `position: absolute; right: 12px; top: 50%; transform: translateY(-50%);`
-   - **Behavior**: Acts as a visual affords indicator that the card is clickable to view documentation/launch. It does **not** animate on hover; only its color sharpens from `#888888` to `#ffffff`.
+1. **Static Right-Center / Leading Chevron (`>`)**:
+   - Interactive elements and card-like rows (including quick documentation items in the burger menu) feature a high-contrast static chevron (`>`) indicating navigable or openable actions.
+   - It does **not** animate on hover; only its color sharpens from `#888888` to `#ffffff`.
 2. **Absolute Top-Right Badges (`[SCRIPT]`, `[DOCS]`)**:
    - **Position**: `position: absolute; top: 10px; right: 12px;`
    - **Behavior**: Floats independently in the upper-right corner of the card.
@@ -38,7 +39,13 @@ Each application, launcher, model, knowledge archive, manual, map, image, and do
      - **All tags must share a uniform, fixed or minimum width calibrated to the largest tag in that container**.
      - Never allow ragged, mismatched tag widths within the same list or component.
      - Center the text within the badge (`display: inline-flex; align-items: center; justify-content: center; text-align: center;`) with `box-sizing: border-box; flex-shrink: 0;`.
-4. **Executable Hover & Copy-to-Clipboard**:
+4. **Custom High-Contrast Monochrome Scrollbars**:
+   - Default browser scrollbars (especially Chrome's rounded, light-themed, or jitter-inducing scrollbars) are replaced with a calibrated high-contrast monochrome design:
+     - 8px thin scrollbars (`::-webkit-scrollbar { width: 8px; height: 8px; }`)
+     - Pitch black track (`#000000`)
+     - Dark gray thumb (`#2a2a2a`) with sharp `#555555` hover contrast and Firefox standard `scrollbar-color: #2a2a2a #000000; scrollbar-width: thin`.
+     - Prevents layout shaking or dynamic width collapse during data reloads.
+5. **Executable Hover & Copy-to-Clipboard**:
    - Executable links (e.g. `artcraft.exe`, `wordcraft-cli.exe`, batch script names) are rendered with `.exe-link`.
    - **Hover Effect**: Underlined with high contrast (`text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px;`).
    - **Click Action**: Copies the absolute local filesystem path (e.g. `<drive>\Warehouse\craft\artcraft\bin\artcraft.exe`) directly to the clipboard and surfaces a confirmation toast.
