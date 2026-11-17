@@ -95,6 +95,10 @@ Use clean, 16x16 wireframe or solid geometric SVGs:
 - Backdrops must be deep blackout scrims (`rgba(0, 0, 0, 0.88)`).
 - Always wire standard keyboard shortcuts (<kbd>Esc</kbd> to close, <kbd>F</kbd> for fullscreen, <kbd>/</kbd> to filter).
 
+7. **Drawer & Sideview Viewer Coordination**:
+   - When a navigation drawer is active, any secondary preview or file viewer must open instantaneously (zero transition lag) into a dedicated sideview panel occupying the remaining screen space next to the drawer, rather than rendering obscured beneath it or awkwardly centered. Closing the drawer dismisses the paired sideview.
+
+
 ---
 
 ## 3. Reference

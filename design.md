@@ -119,8 +119,13 @@ dashboard\
   - Labeled `MENU (M)` with keyboard shortcut binding to <kbd>M</kbd>.
 - **Slide-out Navigation Drawer**:
   - Dark container (`#0a0a0a`), bordered on the right with `#ffffff` (2px).
+  - Width: 440px (or full width on mobile/narrow screens).
   - Background overlay scrim (`rgba(0, 0, 0, 0.75)`).
   - Dismissible via <kbd>Esc</kbd>, close button `[ESC / X]`, or clicking the background scrim.
+- **Sideview Document Viewer Mode**:
+  - When opening a document while the burger menu drawer is active, the document modal reader instantly pops up into a **side view panel** occupying the remaining screen space to the right of the drawer (`left: 440px; right: 0; top: 0; bottom: 0;`).
+  - Instant zero-transition display maintaining the drawer and folder tree in full view beside the document reader.
+  - Closing the drawer or pressing <kbd>Esc</kbd> clears the side view and returns cleanly to the main dashboard.
 
 ### 7.2 Core Document Quick Access
 - Direct access to essential root operational documents without searching:
